@@ -37,11 +37,10 @@ int main()
     SE::Util::Parser parser("/path/to/glsl/shader");
     
     // retrieve the data from the parser
-    // the std::string here contains the correct data to pass it to opengl to compile
+    // the parser.content contains the data needed for opengl to compile
     GLuint shader = glCreateShader(GL_FRAGMENT_SHADER);
     const char* temp = parser.content.c_str();
     glShaderSource(shader, 1, &temp,nullptr);
     
 }
-
 ```
